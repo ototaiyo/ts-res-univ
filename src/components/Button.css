@@ -1,0 +1,19 @@
+.image-button {
+  display: inline-flex;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #b4b4b4;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.image-button:hover {
+  border-color: #ffee00;
+}
+
+.image-button.active {
+  border-color: #007bff;
+}
