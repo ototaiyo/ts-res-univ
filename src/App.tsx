@@ -20,6 +20,7 @@ function App() {
   return (
     <div>
       <Button
+        title="Summer"
         active={sound === SoundType.Summer}
         backgroundImage={summerImage}
         onClick={() =>
@@ -27,6 +28,7 @@ function App() {
         }
       />
       <Button
+        title="Rain"
         active={sound === SoundType.Rain}
         backgroundImage={rainImage}
         onClick={() =>
@@ -34,6 +36,7 @@ function App() {
         }
       />
       <Button
+        title="Winter"
         active={sound === SoundType.Winter}
         backgroundImage={winterImage}
         onClick={() =>
