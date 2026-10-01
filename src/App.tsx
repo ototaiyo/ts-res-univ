@@ -18,32 +18,35 @@ function App() {
   const [sound, setSound] = useState<SoundType | boolean>(false);
 
   return (
-    <div>
-      <Button
-        title="Summer"
-        active={sound === SoundType.Summer}
-        backgroundImage={summerImage}
-        onClick={() =>
-          setSound(sound === SoundType.Summer ? false : SoundType.Summer)
-        }
-      />
-      <Button
-        title="Rain"
-        active={sound === SoundType.Rain}
-        backgroundImage={rainImage}
-        onClick={() =>
-          setSound(sound === SoundType.Rain ? false : SoundType.Rain)
-        }
-      />
-      <Button
-        title="Winter"
-        active={sound === SoundType.Winter}
-        backgroundImage={winterImage}
-        onClick={() =>
-          setSound(sound === SoundType.Winter ? false : SoundType.Winter)
-        }
-      />
-    </div>
+      <>
+          <header>Weather sounds</header>
+          <div>
+              <Button
+                  title="Summer"
+                  active={sound === SoundType.Summer}
+                  backgroundImage={summerImage}
+                  onClick={() =>
+                      setSound(sound === SoundType.Summer ? false : SoundType.Summer)
+                  }
+              />
+              <Button
+                  title="Rain"
+                  active={sound === SoundType.Rain}
+                  backgroundImage={rainImage}
+                  onClick={() =>
+                      setSound(sound === SoundType.Rain ? false : SoundType.Rain)
+                  }
+              />
+              <Button
+                  title="Winter"
+                  active={sound === SoundType.Winter}
+                  backgroundImage={winterImage}
+                  onClick={() =>
+                      setSound(sound === SoundType.Winter ? false : SoundType.Winter)
+                  }
+              />
+          </div>
+      </>
   );
 }
 
