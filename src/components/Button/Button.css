@@ -1,11 +1,22 @@
 .image-button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 1 / 1;
   background-size: cover;
   background-position: center;
   border: 5px solid #615f5f;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
   transition: border-color 0.3s ease;
+}
+
+.image-button__icon {
+  width: 30%;
+  height: 30%;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 .image-button:hover {

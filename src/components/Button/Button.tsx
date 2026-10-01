@@ -6,6 +6,7 @@ type ButtonProps = {
   title: string;
   active: boolean;
   backgroundImage?: string;
+  icon: string;
   onClick: () => void;
 };
 
@@ -14,6 +15,7 @@ function Button({
   title,
   active,
   backgroundImage,
+  icon,
   onClick,
 }: ButtonProps) {
   const style: CSSProperties = {
@@ -26,7 +28,9 @@ function Button({
       style={style}
       title={title}
       onClick={onClick}
-    />
+    >
+      <img className="image-button__icon" src={icon} alt="" draggable={false} />
+    </div>
   );
 }
 
