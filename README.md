@@ -1,1 +1,1 @@
-A simple player with volume control, audio track selection, and pause functions.
+The simple player with volume control, audio track selection, and pause functions.
