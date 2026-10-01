@@ -10,13 +10,13 @@ type SliderProps = Omit<
   onChange: (value: number) => void;
 };
 
-function Slider({ title, value, onChange }: SliderProps) {
+function Slider({ className, title, value, onChange }: SliderProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     onChange(Number(event.target.value));
 
   return (
     <input
-      className="slider"
+      className={`slider ${className ?? ""}`}
       type="range"
       min="0"
       max="100"

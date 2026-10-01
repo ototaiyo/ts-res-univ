@@ -2,8 +2,41 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 32px;
-  color: #e05a36;
-  font-size: 27px;
-  margin-bottom: 25px;
+  color: white;
+  font-size: 3em;
+  padding: 21px 0;
+  line-height: 1;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #323a15;
+  background-image: url("./assets/background.jpg");
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+.Control-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  width: 80%;
+}
+
+.Weather-control {
+  width: 30%;
+  min-width: 100px;
+  max-width: 200px;
+  border-radius: 20px;
+}
+
+.Volume-slider {
+  margin-top: 36px;
+  accent-color: white;
 }

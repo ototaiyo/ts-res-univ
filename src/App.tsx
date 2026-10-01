@@ -20,10 +20,11 @@ function App() {
   const [volume, setVolume] = useState<number>(50);
 
   return (
-    <>
+    <div className="App">
       <header>Weather sounds</header>
-      <div>
+      <div className="Control-panel">
         <Button
+          className="Weather-control"
           title="Summer"
           active={sound === SoundType.Summer}
           backgroundImage={summerImage}
@@ -32,6 +33,7 @@ function App() {
           }
         />
         <Button
+          className="Weather-control"
           title="Rain"
           active={sound === SoundType.Rain}
           backgroundImage={rainImage}
@@ -40,6 +42,7 @@ function App() {
           }
         />
         <Button
+          className="Weather-control"
           title="Winter"
           active={sound === SoundType.Winter}
           backgroundImage={winterImage}
@@ -49,13 +52,14 @@ function App() {
         />
       </div>
       <Slider
+        className="Volume-slider"
         min={0}
         max={100}
         title={`Volume: ${volume}%`}
         value={volume}
         onChange={(value) => setVolume(value)}
       />
-    </>
+    </div>
   );
 }
 
