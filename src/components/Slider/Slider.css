@@ -1,0 +1,8 @@
+.slider {
+  display: flex;
+  width: 200px;
+}
+
+.slider:hover {
+  accent-color: #ffee00;
+}
