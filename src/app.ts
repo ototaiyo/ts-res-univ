@@ -72,11 +72,7 @@ const getData = async (
   return result;
 };
 
-getData(
-  // COMMENTS_URL,
-  // COMMENTS_INCORRECT_URL,
-  PresetOfflineData.PartialCorrect,
-)
+getData(COMMENTS_URL)
   .then((data: OutDataComments | undefined) => {
     data?.map((d: DataComment) => {
       console.log(
