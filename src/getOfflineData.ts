@@ -18,6 +18,9 @@ const getOfflineData = (offlineData: PresetOfflineData) => {
   }
 };
 
+const isPresetOfflineData = (value: string): value is PresetOfflineData =>
+  Object.values(PresetOfflineData).some((preset) => preset === value);
+
 const offlineCoorectComments = [
   {
     postId: 1,
@@ -123,4 +126,4 @@ const offlineIncoorectData = {
   body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium",
 };
 
-export { PresetOfflineData, getOfflineData };
+export { PresetOfflineData, getOfflineData, isPresetOfflineData };

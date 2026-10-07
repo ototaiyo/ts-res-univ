@@ -1,6 +1,11 @@
-import { getOfflineData, PresetOfflineData } from "./getOfflineData";
+import {
+  getOfflineData,
+  isPresetOfflineData,
+  PresetOfflineData,
+} from "./getOfflineData";
 
 const COMMENTS_URL = "https://jsonplaceholder.typicode.com/comments";
+const COMMENTS_INCORRECT_URL = "https://some.url.dmn/comments";
 
 interface CoomentFromTypicode {
   id?: unknown;
@@ -25,13 +30,12 @@ interface DataComment {
 type OutDataComments = DataComment[];
 
 const getData = async (
-  url: string,
-  presetOfflineData?: PresetOfflineData,
+  url: string | PresetOfflineData,
 ): Promise<OutDataComments | undefined> => {
   let payloadComments: unknown;
 
-  if (!!presetOfflineData) {
-    payloadComments = getOfflineData(presetOfflineData);
+  if (isPresetOfflineData(url)) {
+    payloadComments = getOfflineData(url);
   } else {
     const response = await fetch(url);
 
@@ -69,17 +73,25 @@ const getData = async (
 };
 
 getData(
-  COMMENTS_URL,
-  // PresetOfflineData.PartialCorrect
-).then((data: OutDataComments | undefined) => {
-  data?.map((d: DataComment) => {
-    console.log(
-      Object.entries(d)
-        .map(([key, value]) => `${key}: ${value}`)
-        .join(", "),
+  // COMMENTS_URL,
+  // COMMENTS_INCORRECT_URL,
+  PresetOfflineData.PartialCorrect,
+)
+  .then((data: OutDataComments | undefined) => {
+    data?.map((d: DataComment) => {
+      console.log(
+        Object.entries(d)
+          .map(([key, value]) => `${key}: ${value}`)
+          .join(", "),
+      );
+    });
+  })
+  .catch((error: unknown) => {
+    console.error(
+      "Failed to fetch comments:\n\t",
+      error instanceof Error ? error.message : error,
     );
   });
-});
 
 /**
  * ID: 1, Email: Eliseo...
